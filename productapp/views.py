@@ -27,7 +27,7 @@ def ProductVariant_list(request):
         return Response(serializer.data,status=status.HTTP_200_OK)
 
 class CategoryWithProduct(APIView):
-    def get(self, respect,category_id, format=None):
+    def get(self,request,category_id, format=None):
         try:
             category = Categorycloth.objects.get(id=category_id)
         except Categorycloth.DoesNotExist:
